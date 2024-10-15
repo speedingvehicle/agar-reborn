@@ -54,5 +54,5 @@ function playBall() {
 	window.moveTo(xPos, yPos);
 
 	window.resizeTo(newYdn(), newXrt())
-	setTimeout(playBall, 50);
+	setTimeout(playBall, 1);
 }
