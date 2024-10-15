@@ -8,6 +8,8 @@ document.addEventListener("click", async () => {
 });
 
 document.addEventListener('pointerenter', () => {
+	audio.play()
+
 	playBall();
 	audioPlay();
 	setTimeout(() => {
@@ -15,14 +17,7 @@ document.addEventListener('pointerenter', () => {
 	}, 1000);
 })
 
-window.onload = () => {
-	playBall();
-	audio.play();
-
-	setTimeout(async () => {
-		await proCreate(1)
-	}, 4000);
-};
+window.onload = playBall
 
 window.oncontextmenu = () => false;
 window.onkeydown = () => {
