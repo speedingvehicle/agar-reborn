@@ -6,7 +6,7 @@ let yPos = -100;
 function randomRange(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
-  
+
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -14,9 +14,9 @@ function changeTitle(title) {
 	document.title = title;
 }
 
-async function proCreate(count) {	
+async function proCreate(count) {
 	for (let i = 0; i < count; i++) {
-		window.open("game.html", "", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
+		window.open("game.html", "", `menubar=no, status=no, toolbar=no, resizable=no, width=${Math.min(256, Math.random() * 512)}, height=${Math.min(256, Math.random() * 512)}, titlebar=no, alwaysRaised=yes`);
 		await new Promise(r => setTimeout(r, 250));
 	}
 }
@@ -27,7 +27,7 @@ function newXlt() {
 }
 
 function newXrt() {
-	xOff = Math.ceil(7 * Math.random())  * 5 - 10;
+	xOff = Math.ceil(7 * Math.random()) * 5 - 10;
 	window.focus();
 }
 
@@ -37,20 +37,20 @@ function newYup() {
 }
 
 function newYdn() {
-	yOff = Math.ceil( 7 * Math.random()) * 5 - 10;
+	yOff = Math.ceil(7 * Math.random()) * 5 - 10;
 	window.focus();
 }
 
 function playBall() {
-    xPos += xOff;
-    yPos += yOff;
-    
-	if (xPos > screen.width - 357) newXlt();    
+	xPos += xOff;
+	yPos += yOff;
+
+	if (xPos > screen.width - 357) newXlt();
 	if (xPos < 0) newXrt();
-    
-	if (yPos > screen.height - 330) newYup(); 		
+
+	if (yPos > screen.height - 330) newYup();
 	if (yPos < 0) newYdn();
 
-    window.moveTo(xPos, yPos);
-    setTimeout(playBall, 100);
+	window.moveTo(xPos, yPos);
+	setTimeout(playBall, 100);
 }

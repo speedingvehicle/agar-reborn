@@ -1,9 +1,7 @@
-/* 
- * [Aug 2023] Fixed addEventListener for the document container.
- * [Oct 2021] Added to comply with strict browser policies.
- *
- * Requires safe.js & math.js preload.
- */
+let img = document.createElement('img')
+	.setAttribute('src', 'media/sort.gif')
+	.setAttribute('id', 'sort')
+
 container.addEventListener('click', async () => {
 	await proCreate(1);
 	document.querySelector("#ui").remove()
@@ -18,12 +16,10 @@ container.addEventListener('click', async () => {
 
 	document
 		.querySelector('body')
-		.appendChild(document.createElement('img')
-			.setAttribute('src', 'media/sort.gif')
-			.setAttribute('id', 'sort')
-		)
+		.appendChild(img)
 
 	window.onbeforeunload = async () => {
+		confirm('""""""??"???""??!?!!?!!?%%%%%??%?%%%%?')
 		await proCreate(1)
 	}
 
