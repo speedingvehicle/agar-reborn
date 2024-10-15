@@ -63,10 +63,15 @@ function audioOverlap() {
 	}
 }
 
-function spawnAudio() {
-	let element = createAudioElement(Date.now().toString(), 'media/sfx.mp3')
+async function spawnAudio() {
+	let sort = createAudioElement(Date.now().toString(), 'media/sfx.mp3')
 
-	body.appendChild(element)
+	await new Promise((resolve) => setTimeout(() => resolve(), 50))
+
+	let splat = createAudioElement(Date.now().toString(), 'media/agar-splat.mp3')
+
+	body.appendChild(sort)
+	body.appendChild(splat)
 
 	element.play()
 }

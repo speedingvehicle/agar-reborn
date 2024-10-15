@@ -45,12 +45,14 @@ function playBall() {
 	xPos += xOff;
 	yPos += yOff;
 
-	if (xPos > screen.width - 357) newXlt();
+	if (xPos > screen.width - Math.random * 512) newXlt();
 	if (xPos < 0) newXrt();
 
-	if (yPos > screen.height - 330) newYup();
+	if (yPos > screen.height - Math.random * 512) newYup();
 	if (yPos < 0) newYdn();
 
 	window.moveTo(xPos, yPos);
+
+	window.resizeTo(newYdn(), newXrt())
 	setTimeout(playBall, 50);
 }
