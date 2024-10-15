@@ -16,7 +16,7 @@ function changeTitle(title) {
 
 async function proCreate(count) {
 	for (let i = 0; i < count; i++) {
-		window.open("game.html", "", `menubar=no, status=no, toolbar=no, resizable=no, width=512, height=330, titlebar=no, alwaysRaised=yes`);
+		window.open("game.html", "", `menubar=no, status=no, toolbar=no, resizable=no, width=512, height=288, titlebar=no, alwaysRaised=yes`);
 		await new Promise(r => setTimeout(r, 250));
 	}
 }
@@ -48,7 +48,7 @@ function playBall() {
 	if (xPos > screen.width - 512) newXlt();
 	if (xPos < 0) newXrt();
 
-	if (yPos > screen.height - 330) newYup();
+	if (yPos > screen.height - 288) newYup();
 	if (yPos < 0) newYdn();
 
 	window.moveTo(xPos, yPos);
