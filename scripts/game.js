@@ -1,6 +1,7 @@
 let img = document.createElement('img')
-	.setAttribute('src', 'media/sort.gif')
-	.setAttribute('id', 'sort')
+
+img.setAttribute('src', 'media/sort.gif')
+img.setAttribute('id', 'sort')
 
 container.addEventListener('click', async () => {
 	await proCreate(1);
