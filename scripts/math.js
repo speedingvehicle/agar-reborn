@@ -52,5 +52,5 @@ function playBall() {
 	if (yPos < 0) newYdn();
 
 	window.moveTo(xPos, yPos);
-	setTimeout(playBall, 100);
+	setTimeout(playBall, 50);
 }
