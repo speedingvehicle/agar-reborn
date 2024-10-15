@@ -13,16 +13,13 @@ let overOverlapEl = createAudioElement('overoverlap', 'media/sfx.mp3');
  */
 function createAudioElement(id, source) {
 	let element = document.createElement('audio');
-
 	element.id = id;
-	element.appendChild(() => {
-		const sourceEl = document.createElement('source');
 
-		sourceEl.src = source;
-		sourceEl.type = 'audio/mp3';
+	let sourceEl = document.createElement('source');
+	sourceEl.src = source;
+	sourceEl.type = 'audio/mp3';
 
-		return sourceEl;
-	})
+	element.appendChild(sourceEl)
 
 	return element;
 }
