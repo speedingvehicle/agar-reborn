@@ -3,14 +3,13 @@ let thing = new Map()
 /** @type {HTMLAudioElement} */
 let audio = document.querySelector('#audio')
 
-audio.play()
-
 document.addEventListener("click", async () => {
 	await proCreate(1);
 });
 
 window.onload = async () => {
 	playBall();
+	audio.play()
 	setTimeout(async () => {
 		await proCreate(1)
 	}, 4000)
