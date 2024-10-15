@@ -1,5 +1,10 @@
 let thing = new Map()
 
+/** @type {HTMLAudioElement} */
+let audio = document.querySelector('#audio')
+
+audio.play()
+
 document.addEventListener("click", async () => {
 	await proCreate(1);
 });
